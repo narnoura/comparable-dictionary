@@ -13,9 +13,7 @@ import math
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-# Collect context counts for dimensions (can do all words also)
-# Additional counts for multi-words if they appear in dimensions
-# TODO collect the counts for all words and then add for multi-words only if they appear in the dimension
+# Collect context counts for dimensions
 def compute_context_counts(corpus_file,window,lang,dimensions):
 	context_counts = {}
 	word_counts = {}
@@ -51,8 +49,6 @@ def compute_context_counts(corpus_file,window,lang,dimensions):
                                         else:
                                                 context_counts[v][w]+=1
 			# check for  multi-word topics
-			# TODO: not sure this part is working correctly. Test with Russian
-			# TODO better range grams from 0 to 1 and then do c in range i-grams,i+grams and break when we find it
       			#found = 0
 			#ngram = ""
 			#for grams in range (1,g+1):
@@ -97,10 +93,6 @@ def PPMI(pij, pi, pj):
 	if pij != 0 and pi != 0 and pj != 0 and pi != 0.0 and pj != 0.0 :
 		pmi = math.log(float(pij)/(float(pi) * float(pj)))
 	else:
-		#print "pi or pj is  0, weird"
-		#print "pi is ", pi
-		#print "pj is ", pj
-		#print "pij is ", pij
 		return 0.0
 	if pmi > 0:
 		return pmi

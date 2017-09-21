@@ -6,7 +6,7 @@ create-dictionary: Aligns documents only by the seed topics
 
 create-dictionary-improved: Aligns documents by actual Wikipedia article alignments. Introduces additional weighting scheme for similarity, to take into account how often words occur in the same document. Currently inefficient. Can be improved by using vectors in term-document representation.
 
-Example run:
+**Example run:
 
 python  create-dictionary.py --topic topic-lists/all.lang --inputdir corpus/ --outputdir dictionary2/ --lang en,ar --counts dictionary2/counts/ --words dictionary2/wordcounts/
 

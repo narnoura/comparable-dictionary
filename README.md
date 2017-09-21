@@ -12,6 +12,8 @@ python  create-dictionary.py --topic topic-lists/all.lang --inputdir corpus/ --o
 
 python create-dictionary-improved.py --topic topic-lists/all.lang.newest --inputdir ../comparable-data/wikipedia-aligned/en/ --outputdir dictionaryAligned/ --lang ar,en
 
+**Arguments:
+
 --topic-lists/all.lang: contain the seed words (dimensions) which correspond to initial translations in the different languages
 
 --inputdir: directory containing concatenated documents for each language (in the case of create-dictionary.py) or aligned articles (in the case of create-dictionary-improved.py)
